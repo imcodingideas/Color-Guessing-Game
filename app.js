@@ -29,9 +29,19 @@ for(var i = 0; i < squares.length; i++) {
        //compare color to pickedColor
         if(clickedColor === pickedColor) {
             messageDisplay.textContent = "Correct";
+            changeColors(clickedColor);
         } else {
             this.style.background = "#9b59b6"
             messageDisplay.textContent = "Try Again";
         }
     });
+}
+
+
+function changeColors(color) {
+    //loop through all squares
+    for(var i = 0; i < squares.length; i++) {
+        squares[i].style.background = color;
+    }
+    //change each color to match given color
 }
