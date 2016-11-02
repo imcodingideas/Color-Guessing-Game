@@ -14,6 +14,7 @@ var colors = [
 var squares = document.querySelectorAll('.square');
 var pickedColor = colors[3];
 var colorDisplay = document.querySelector('#colorDisplay');
+var messageDisplay = document.querySelector('#message');
 
 colorDisplay.textContent = pickedColor;
 
@@ -27,9 +28,10 @@ for(var i = 0; i < squares.length; i++) {
         var clickedColor = this.style.background;
        //compare color to pickedColor
         if(clickedColor === pickedColor) {
-            alert('correct');
+            messageDisplay.textContent = "Correct";
         } else {
-            alert('wrong');
+            this.style.background = "#9b59b6"
+            messageDisplay.textContent = "Try Again";
         }
     });
 }
